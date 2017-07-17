@@ -1,0 +1,890 @@
+
+%% bare_conf.tex
+%% V1.4b
+%% 2015/08/26
+%% by Michael Shell
+%% See:
+%% http://www.michaelshell.org/
+%% for current contact information.
+%%
+%% This is a skeleton file demonstrating the use of IEEEtran.cls
+%% (requires IEEEtran.cls version 1.8b or later) with an IEEE
+%% conference paper.
+%%
+%% Support sites:
+%% http://www.michaelshell.org/tex/ieeetran/
+%% http://www.ctan.org/pkg/ieeetran
+%% and
+%% http://www.ieee.org/
+
+%%*************************************************************************
+%% Legal Notice:
+%% This code is offered as-is without any warranty either expressed or
+%% implied; without even the implied warranty of MERCHANTABILITY or
+%% FITNESS FOR A PARTICULAR PURPOSE! 
+%% User assumes all risk.
+%% In no event shall the IEEE or any contributor to this code be liable for
+%% any damages or losses, including, but not limited to, incidental,
+%% consequential, or any other damages, resulting from the use or misuse
+%% of any information contained here.
+%%
+%% All comments are the opinions of their respective authors and are not
+%% necessarily endorsed by the IEEE.
+%%
+%% This work is distributed under the LaTeX Project Public License (LPPL)
+%% ( http://www.latex-project.org/ ) version 1.3, and may be freely used,
+%% distributed and modified. A copy of the LPPL, version 1.3, is included
+%% in the base LaTeX documentation of all distributions of LaTeX released
+%% 2003/12/01 or later.
+%% Retain all contribution notices and credits.
+%% ** Modified files should be clearly indicated as such, including  **
+%% ** renaming them and changing author support contact information. **
+%%*************************************************************************
+
+
+% *** Authors should verify (and, if needed, correct) their LaTeX system  ***
+% *** with the testflow diagnostic prior to trusting their LaTeX platform ***
+% *** with production work. The IEEE's font choices and paper sizes can   ***
+% *** trigger bugs that do not appear when using other class files.       ***                          ***
+% The testflow support page is at:
+% http://www.michaelshell.org/tex/testflow/
+
+
+
+\documentclass[10pt,journal,final,twocolumn,]{IEEEtran}
+\usepackage{amsmath}
+\usepackage{graphicx}
+\usepackage{color}
+\usepackage[caption=false,font=normalsize,labelfont=sf,textfont=sf]{subfig}
+\usepackage{array}
+\usepackage{algorithmic}
+% Some Computer Society conferences also require the compsoc mode option,
+% but others use the standard conference format.
+%
+% If IEEEtran.cls has not been installed into the LaTeX system files,
+% manually specify the path to it like:
+% \documentclass[conference]{../sty/IEEEtran}
+
+
+
+
+
+% Some very useful LaTeX packages include:
+% (uncomment the ones you want to load)
+
+
+% *** MISC UTILITY PACKAGES ***
+%
+%\usepackage{ifpdf}
+% Heiko Oberdiek's ifpdf.sty is very useful if you need conditional
+% compilation based on whether the output is pdf or dvi.
+% usage:
+% \ifpdf
+%   % pdf code
+% \else
+%   % dvi code
+% \fi
+% The latest version of ifpdf.sty can be obtained from:
+% http://www.ctan.org/pkg/ifpdf
+% Also, note that IEEEtran.cls V1.7 and later provides a builtin
+% \ifCLASSINFOpdf conditional that works the same way.
+% When switching from latex to pdflatex and vice-versa, the compiler may
+% have to be run twice to clear warning/error messages.
+
+
+
+
+
+
+% *** CITATION PACKAGES ***
+%
+%\usepackage{cite}
+% cite.sty was written by Donald Arseneau
+% V1.6 and later of IEEEtran pre-defines the format of the cite.sty package
+% \cite{} output to follow that of the IEEE. Loading the cite package will
+% result in citation numbers being automatically sorted and properly
+% "compressed/ranged". e.g., [1], [9], [2], [7], [5], [6] without using
+% cite.sty will become [1], [2], [5]--[7], [9] using cite.sty. cite.sty's
+% \cite will automatically add leading space, if needed. Use cite.sty's
+% noadjust option (cite.sty V3.8 and later) if you want to turn this off
+% such as if a citation ever needs to be enclosed in parenthesis.
+% cite.sty is already installed on most LaTeX systems. Be sure and use
+% version 5.0 (2009-03-20) and later if using hyperref.sty.
+% The latest version can be obtained at:
+% http://www.ctan.org/pkg/cite
+% The documentation is contained in the cite.sty file itself.
+
+
+
+
+
+
+% *** GRAPHICS RELATED PACKAGES ***
+%
+%\ifCLASSINFOpdf
+% \usepackage[pdftex]{graphicx}
+% declare the path(s) where your graphic files are
+% \graphicspath{{../pdf/}{../jpeg/}}
+% and their extensions so you won't have to specify these with
+% every instance of \includegraphics
+% \DeclareGraphicsExtensions{.pdf,.jpeg,.png}
+%\else
+% or other class option (dvipsone, dvipdf, if not using dvips). graphicx
+% will default to the driver specified in the system graphics.cfg if no
+% driver is specified.
+% \usepackage[dvips]{graphicx}
+% declare the path(s) where your graphic files are
+% \graphicspath{{../eps/}}
+% and their extensions so you won't have to specify these with
+% every instance of \includegraphics
+% \DeclareGraphicsExtensions{.eps}
+%\fi
+% graphicx was written by David Carlisle and Sebastian Rahtz. It is
+% required if you want graphics, photos, etc. graphicx.sty is already
+% installed on most LaTeX systems. The latest version and documentation
+% can be obtained at: 
+% http://www.ctan.org/pkg/graphicx
+% Another good source of documentation is "Using Imported Graphics in
+% LaTeX2e" by Keith Reckdahl which can be found at:
+% http://www.ctan.org/pkg/epslatex
+%
+% latex, and pdflatex in dvi mode, support graphics in encapsulated
+% postscript (.eps) format. pdflatex in pdf mode supports graphics
+% in .pdf, .jpeg, .png and .mps (metapost) formats. Users should ensure
+% that all non-photo figures use a vector format (.eps, .pdf, .mps) and
+% not a bitmapped formats (.jpeg, .png). The IEEE frowns on bitmapped formats
+% which can result in "jaggedy"/blurry rendering of lines and letters as
+% well as large increases in file sizes.
+%
+% You can find documentation about the pdfTeX application at:
+% http://www.tug.org/applications/pdftex
+
+
+
+
+
+% *** MATH PACKAGES ***
+%
+%\usepackage{amsmath}
+% A popular package from the American Mathematical Society that provides
+% many useful and powerful commands for dealing with mathematics.
+%
+% Note that the amsmath package sets \interdisplaylinepenalty to 10000
+% thus preventing page breaks from occurring within multiline equations. Use:
+%\interdisplaylinepenalty=2500
+% after loading amsmath to restore such page breaks as IEEEtran.cls normally
+% does. amsmath.sty is already installed on most LaTeX systems. The latest
+% version and documentation can be obtained at:
+% http://www.ctan.org/pkg/amsmath
+
+
+
+
+
+% *** SPECIALIZED LIST PACKAGES ***
+%
+%\usepackage{algorithmic}
+% algorithmic.sty was written by Peter Williams and Rogerio Brito.
+% This package provides an algorithmic environment fo describing algorithms.
+% You can use the algorithmic environment in-text or within a figure
+% environment to provide for a floating algorithm. Do NOT use the algorithm
+% floating environment provided by algorithm.sty (by the same authors) or
+% algorithm2e.sty (by Christophe Fiorio) as the IEEE does not use dedicated
+% algorithm float types and packages that provide these will not provide
+% correct IEEE style captions. The latest version and documentation of
+% algorithmic.sty can be obtained at:
+% http://www.ctan.org/pkg/algorithms
+% Also of interest may be the (relatively newer and more customizable)
+% algorithmicx.sty package by Szasz Janos:
+% http://www.ctan.org/pkg/algorithmicx
+
+
+
+
+% *** ALIGNMENT PACKAGES ***
+%
+%\usepackage{array}
+% Frank Mittelbach's and David Carlisle's array.sty patches and improves
+% the standard LaTeX2e array and tabular environments to provide better
+% appearance and additional user controls. As the default LaTeX2e table
+% generation code is lacking to the point of almost being broken with
+% respect to the quality of the end results, all users are strongly
+% advised to use an enhanced (at the very least that provided by array.sty)
+% set of table tools. array.sty is already installed on most systems. The
+% latest version and documentation can be obtained at:
+% http://www.ctan.org/pkg/array
+
+
+% IEEEtran contains the IEEEeqnarray family of commands that can be used to
+% generate multiline equations as well as matrices, tables, etc., of high
+% quality.
+
+
+
+
+% *** SUBFIGURE PACKAGES ***
+%\ifCLASSOPTIONcompsoc
+%  \usepackage[caption=false,font=normalsize,labelfont=sf,textfont=sf]{subfig}
+%\else
+%  \usepackage[caption=false,font=footnotesize]{subfig}
+%\fi
+% subfig.sty, written by Steven Douglas Cochran, is the modern replacement
+% for subfigure.sty, the latter of which is no longer maintained and is
+% incompatible with some LaTeX packages including fixltx2e. However,
+% subfig.sty requires and automatically loads Axel Sommerfeldt's caption.sty
+% which will override IEEEtran.cls' handling of captions and this will result
+% in non-IEEE style figure/table captions. To prevent this problem, be sure
+% and invoke subfig.sty's "caption=false" package option (available since
+% subfig.sty version 1.3, 2005/06/28) as this is will preserve IEEEtran.cls
+% handling of captions.
+% Note that the Computer Society format requires a larger sans serif font
+% than the serif footnote size font used in traditional IEEE formatting
+% and thus the need to invoke different subfig.sty package options depending
+% on whether compsoc mode has been enabled.
+%
+% The latest version and documentation of subfig.sty can be obtained at:
+% http://www.ctan.org/pkg/subfig
+
+
+
+
+% *** FLOAT PACKAGES ***
+%
+%\usepackage{fixltx2e}
+% fixltx2e, the successor to the earlier fix2col.sty, was written by
+% Frank Mittelbach and David Carlisle. This package corrects a few problems
+% in the LaTeX2e kernel, the most notable of which is that in current
+% LaTeX2e releases, the ordering of single and double column floats is not
+% guaranteed to be preserved. Thus, an unpatched LaTeX2e can allow a
+% single column figure to be placed prior to an earlier double column
+% figure.
+% Be aware that LaTeX2e kernels dated 2015 and later have fixltx2e.sty's
+% corrections already built into the system in which case a warning will
+% be issued if an attempt is made to load fixltx2e.sty as it is no longer
+% needed.
+% The latest version and documentation can be found at:
+% http://www.ctan.org/pkg/fixltx2e
+
+
+%\usepackage{stfloats}
+% stfloats.sty was written by Sigitas Tolusis. This package gives LaTeX2e
+% the ability to do double column floats at the bottom of the page as well
+% as the top. (e.g., "\begin{figure*}[!b]" is not normally possible in
+% LaTeX2e). It also provides a command:
+%\fnbelowfloat
+% to enable the placement of footnotes below bottom floats (the standard
+% LaTeX2e kernel puts them above bottom floats). This is an invasive package
+% which rewrites many portions of the LaTeX2e float routines. It may not work
+% with other packages that modify the LaTeX2e float routines. The latest
+% version and documentation can be obtained at:
+% http://www.ctan.org/pkg/stfloats
+% Do not use the stfloats baselinefloat ability as the IEEE does not allow
+% \baselineskip to stretch. Authors submitting work to the IEEE should note
+% that the IEEE rarely uses double column equations and that authors should try
+% to avoid such use. Do not be tempted to use the cuted.sty or midfloat.sty
+% packages (also by Sigitas Tolusis) as the IEEE does not format its papers in
+% such ways.
+% Do not attempt to use stfloats with fixltx2e as they are incompatible.
+% Instead, use Morten Hogholm'a dblfloatfix which combines the features
+% of both fixltx2e and stfloats:
+%
+% \usepackage{dblfloatfix}
+% The latest version can be found at:
+% http://www.ctan.org/pkg/dblfloatfix
+
+
+
+
+% *** PDF, URL AND HYPERLINK PACKAGES ***
+%
+%\usepackage{url}
+% url.sty was written by Donald Arseneau. It provides better support for
+% handling and breaking URLs. url.sty is already installed on most LaTeX
+% systems. The latest version and documentation can be obtained at:
+% http://www.ctan.org/pkg/url
+% Basically, \url{my_url_here}.
+
+
+
+
+% *** Do not adjust lengths that control margins, column widths, etc. ***
+% *** Do not use packages that alter fonts (such as pslatex).         ***
+% There should be no need to do such things with IEEEtran.cls V1.6 and later.
+% (Unless specifically asked to do so by the journal or conference you plan
+% to submit to, of course. )
+
+
+% correct bad hyphenation here
+\hyphenation{op-tical net-works semi-conduc-tor}
+
+
+\begin{document}
+	%
+	% paper title
+	% Titles are generally capitalized except for words such as a, an, and, as,
+	% at, but, by, for, in, nor, of, on, or, the, to and up, which are usually
+	% not capitalized unless they are the first or last word of the title.
+	% Linebreaks \\ can be used within to get better formatting as desired.
+	% Do not put math or special symbols in the title.
+	\title{Semi-surpervised learning Recoginition method based on Collaborating Representation in Hyperspectral image}
+	
+	
+	% author names and affiliations
+	% use a multiple column layout for up to three different
+	% affiliations
+	\author{\IEEEauthorblockN{Kaiyu Lei}
+		\IEEEauthorblockA{School of Science\\
+			China Agriculture University\\
+			Beijing, Haidian 30332--0250\\
+			Email: http://www.michaelshell.org/contact.html\\}
+		\and
+		\IEEEauthorblockN{Qiaoyun Lin}
+		\IEEEauthorblockA{School of Science\\
+			China Agriculture University\\
+			Beijing, Haidian 30332--0250\\
+			Email: http://www.michaelshell.org/contact.html\\}
+		\and
+		\IEEEauthorblockN{Yunqing Xia\\ Yiyao Dou \\ and Diyou Xiao}
+		\IEEEauthorblockA{School of Science\\
+			China Agriculture University\\
+			Beijing, Haidian 30332--0250\\
+			Email: http://www.michaelshell.org/contact.html}}
+	
+	% conference papers do not typically use \thanks and this command
+	% is locked out in conference mode. If really needed, such as for
+	% the acknowledgment of grants, issue a \IEEEoverridecommandlockouts
+	% after \documentclass
+	
+	% for over three affiliations, or if they all won't fit within the width
+	% of the page, use this alternative format:
+	% 
+	%\author{\IEEEauthorblockN{Michael Shell\IEEEauthorrefmark{1},
+	%Homer Simpson\IEEEauthorrefmark{2},
+	%James Kirk\IEEEauthorrefmark{3}, 
+	%Montgomery Scott\IEEEauthorrefmark{3} and
+	%Eldon Tyrell\IEEEauthorrefmark{4}}
+	%\IEEEauthorblockA{\IEEEauthorrefmark{1}School of Electrical and Computer Engineering\\
+	%Georgia Institute of Technology,
+	%Atlanta, Georgia 30332--0250\\ Email: see http://www.michaelshell.org/contact.html}
+	%\IEEEauthorblockA{\IEEEauthorrefmark{2}Twentieth Century Fox, Springfield, USA\\
+	%Email: homer@thesimpsons.com}
+	%\IEEEauthorblockA{\IEEEauthorrefmark{3}Starfleet Academy, San Francisco, California 96678-2391\\
+	%Telephone: (800) 555--1212, Fax: (888) 555--1212}
+	%\IEEEauthorblockA{\IEEEauthorrefmark{4}Tyrell Inc., 123 Replicant Street, Los Angeles, California 90210--4321}}
+	
+	
+	
+	
+	% use for special paper notices
+	%\IEEEspecialpapernotice{(Invited Paper)}
+	
+	
+	
+	
+	% make the title area
+	\maketitle
+	
+	% As a general rule, do not put math, special symbols or citations
+	% in the abstract
+	\begin{abstract}
+		Analysis of hyperspectral is a 
+	\end{abstract}
+	
+	% no keywords
+	
+	
+	
+	
+	% For peer review papers, you can put extra information on the cover
+	% page as needed:
+	% \ifCLASSOPTIONpeerreview
+	% \begin{center} \bfseries EDICS Category: 3-BBND \end{center}
+	% \fi
+	%
+	% For peerreview papers, this IEEEtran command inserts a page break and
+	% creates the second title. It will be ignored for other modes.
+	\IEEEpeerreviewmaketitle
+	
+	
+	
+	\section{Introduction}
+	% no \IEEEPARstart
+	This demo file is intended to serve as a ``starter file''
+	for IEEE conference papers produced under \LaTeX\ using
+	IEEEtran.cls version 1.8b and later.
+	% You must have at least 2 lines in the paragraph with the drop letter
+	% (should never be an issue)
+	I wish you the best of success.
+	
+	\hfill mds
+	
+	\hfill August 26, 2015
+	
+	
+	\section{Feature Selection by Linear Representation}
+	\subsection{Review Background}
+	When we deal with the FR problem, we always considered each image as a gray-degree vetcor, or a matirx, or an array. Both of these cannot bypass the obstacle, called curse of dimensionality, as we know, which cause the sharp increaseing of time and scoures of algorithm. In many papers, FR problem use the low pixel face image, such as 32$\times$32 or 64$\times$64. However, advanced photography technology allow researchers gain the high pixel pictures(like 1280$\times$720 or 1920$\times$1080 pixels pictures). The gray-degree images of this kind of pictures is great large scale matrixs or vectors. Personal computers always hardly handle this large problem. 
+	
+	In the other aspect, during the trainning progression, not all the features contribute to the recognization. Even in several extreme situations, ultra features will influence the recognized rate negatively. For instance, in [SRC or CRC], the authority gave an example of two face which are simlilar with each other. In this case, machines couldn't separate two kinds of individuals by whole picture. But in reality, we can divide by nose, mouth or eyes. So what our work do is selecting the features can represent an individual based on training image samples. 
+	
+	Many dimension deducing method have been provided. Like PCA feature extracting and LDA feature selecting.  
+	
+	\subsection{Feature Selection based on Linear Representation}
+	When selecting features, we should choose those characters that minimize the difference between samples in same set, and maximize the difference between samples not in the same set. In {\colorbox{red}{figure 1}}, as an instance, the two subfigures stand for two persons. Comparing with the two pictures, we will find that we can recognize a person only by several parts of face, like nose, mouth, brow, or eyes, in this example. 
+	
+	In our model, denote the difference in same set as $\epsilon_{i}$ and the difference between divided set as $\varepsilon_{i}$. To quantify the former goal(minimize $\epsilon_{i}$, maximize $\varepsilon_{i}$), we set up a minimized problem:
+	\begin{equation}
+	\min \quad{\epsilon_{i}}/{\varepsilon_{i}}
+	\end{equation} 
+	
+	We will illustrate this Minimization problem extendly in this section.\\
+	
+	
+	\subsubsection{\textbf{Linear Selection}}
+	
+	Denote $D_{1}=[X_{1}^{(1)},X_{2}^{(1)},...,X_{n_{1}}^{(1)}]\in R^{m\times n_{1}}$ is the set of samples with known-label A, $D_{2}=[X_{1}^{(2)},X_{2}^{(2)},...,X_{n_{2}}^{(2)}]\in R^{m\times n_{2}}$ is the set of samples with label B. Any single sample can be linear represented by other elements with same label. If we denote the linear coefficients is $W_{ij}^{k}$, the single sample $X_{i}^{k}$ are represented to the following equation:
+	\begin{equation}
+	X_{i}^{(k)}\approx \sum_{j\neq i}W_{ij}^{(k)}X_{j}^{(k)}
+	\end{equation}
+	We expact the $W_{ij}^{j}X_{j}^{k}$ is close to $X_{i}^{k}$ as soon as possible. So we solve this minimizatio problem to calculate $W_{ij}^{k}$:
+	\begin{equation}
+	arg\min_{W_{ij}^{(k)}} \qquad \parallel X_{i}^{(k)}- \sum_{j \neq i} W_{ij}^{(k)}X_{i}^{(k)} \parallel_{2}^{2} + \lambda \parallel W_{i}^{(k)} \parallel_{2}^{2}
+	\end{equation}
+	where $W_{i}^{k}=[W_{i1}^{k}, ... , W_{i,n_{k}}^{k} ]$, and $\lambda$ is the regular term coefficient.
+	
+	Considering $\sum_{j \neq i} W_{ij}^{(k)}X_{i}^{(k)}$ as an approximiation of $X_{i}^{(k)}$, errors between $X_{i}^{k}$ and its approximation are used to quantify the similarity of samples with same label:
+	\begin{equation}
+	\epsilon_{k}=\sum_{i=1}^{n} \parallel X_{i}^{(k)}-\sum_{j \neq i} W_{ij}^{(k)}X_{j}^{(k)} \parallel 
+	\end{equation} \\
+	This approximating is resonable, as the {\colorbox{red}{figure 2}} shows. Figure (a) is the first individual face image of Pose05 database, figure  (b) is the first picture of this individual and figure (c) is its linear approximation by other pictures.
+	
+	\begin{figure}[!t]
+		\centering
+		\subfloat[FACE I]{\includegraphics[width=1in]{AR-001-01.eps}\label{a}}
+		\hfil	
+		\subfloat[FACE II]{\includegraphics[width=1in]{AR-002-01.eps}\label{b}}
+		
+		\subfloat[]{ \includegraphics[width=0.5in]{hehehe.eps}\label{a1}}
+		\hfil
+		\subfloat[]{ \includegraphics[width=0.5in]{hehehe2.eps}\label{b1}}
+		
+		Feature(1)\\
+		
+		\subfloat[]{\includegraphics[width=0.5in]{hehehe11.eps}\label{a2}}
+		\hfil
+		\subfloat[]{\includegraphics[width=0.5in]{hehehe22.eps}\label{b2}}
+		
+		Feature(2)\\
+		
+		\caption{(a), (b) are two individuals in AR database; (c), (d) are feature we can recognize these two person, it include left eye of each person; (e),(f) are other feature we can recognize these two person, it include beard and underjaw}
+		\label{fig 1}
+	\end{figure}
+	%\begin{figure}[h]
+	%	\small
+	%	\centering
+	%	\includegraphics[width=9cm]{lr.jpg}\\
+	%	\caption{JPG}
+	%	\label{1}
+	%\end{figure}
+	
+	And then we define the value of following equation as the dissimilarity of samples with different labels:
+	\begin{equation}
+	\varepsilon_{k} =\sum_{i=1}^{n} \parallel \sum_{j \neq i} W_{ij}^{(1)}X_{j}^{(2)} - \sum_{j \neq i} W_{ij}^{(2)}X_{j}^{(2)} \parallel
+	\end{equation} 
+	
+	
+	
+	\subsubsection{\textbf{Feature Selection}}
+	In the FR problem, we recognized individuals by comparing gray-level images. Our method, in substance, is selecting a submatrix of gray-imgae of persons' face. This submatrix, or subimage, should be the most dividual face character of two person. In the other words, maximal difference in different sets and minimal difference in same set.
+	
+	If $x_{i}^{k}$ is a submatrix of $X_{i}^{k}$, we denote $d_{k}=[x_{1}^{(k)},..,x_{n_{k}}^{(k)}] \in R_{m_{0} \times n_{k}}$ is the set of samples with label $k$ after feature selection. Concurrently, we can solve the most appoximation of $x_{i}^{k}$ by same method:
+	\begin{equation}
+	arg \min_{w_{ij}^{k}} \quad \parallel x_{i}^{(k)}- \sum_{j \neq i} w_{ij}^{(k)}x_{i}^{(k)} \parallel_{2}^{2} + \lambda \parallel w_{i}^{(k)} \parallel_{2}^{2}
+	\end{equation} 
+	where $w_{i}^{k}=[w_{i1}^{k}, ... , w_{i,n_{k}}^{k} ]$, and $\lambda$ is the regular term coefficient.
+	
+	Considering the difference parameters $\epsilon_{k}$ and $\varepsilon_{k}$:
+	\begin{align}
+	\epsilon_{k}&=\sum_{i=1} || x_{i}^{(k)}-\sum_{j \neq i} w_{ij}^{(k)}x_{j}^{(k)}||\\
+	\varepsilon_{k}&=\sum_{i=1}^{n} || \sum_{j \neq i} w_{ij}^{(1)}x_{j}^{(2)} - \sum_{j \neq i} w_{ij}^{(2)}x_{j}^{(2)} ||
+	\end{align} 
+	We calculate $\epsilon$ and $\varepsilon$ by following minimization problem:
+	\begin{equation}
+	arg\min_{w_{i}^{k},x} \quad  \frac{|A - B|}{\mu C}
+	\end{equation}
+	where \resizebox{0.5\hsize}{!}{$A=\sum_{i=1} || x_{i}^{(1)}-\sum_{j \neq i}w_{ij}^{(1)}x_{j}^{(1)}||$}, \resizebox{0.5\hsize}{!}{$B=\sum_{i=1}||x_{i}^{(2)}-\sum_{j \neq i}w_{ij}^{(1)}x_{j}^{(2)}||$},  \resizebox{0.6\hsize}{!}{$C=\sum_{i=1}^{n}||\sum_{j \neq i} w_{ij}^{(1)}x_{j}^{(2)}-\sum_{j \neq i}w_{ij}^{(2)}x_{j}^{(2)}||$}, and $\mu$ is weight parameter, which shows the relative importance of $\epsilon$ and $\varepsilon$.
+	
+	
+	
+	\subsubsection{Approximated Solution of minimizing problem}
+	It is very hard to solve former equation directly. To make the procession is available, we design a simplified algorithm, which shown in the {\colorbox{red}{figure 3}}.  
+	\begin{figure}[!t]
+		\centering
+		\includegraphics[width=2.5in]{slpe.jpg}
+		% where an .eps filename suffix will be assumed under latex, 
+		% and a .pdf suffix will be assumed for pdflatex; or what has been declared
+		% via \DeclareGraphicsExtensions.
+		\caption{Simulation results for the network.}
+		\label{fig 3}
+	\end{figure}
+	As the figure shows, we divide an image into some parts. Each respect contains one or some face features. Then we denote submatrix located in $(m,n)$ as $x_{i,(m,n)}^{k}$. Start from location $(1,1)$, for every submatrix, calculate three value $A$, $B$, $C$:
+	\begin{align}
+	A&=\sum_{i=1}^{n} ||x_{i,(m,n)}^{(1)} - \sum_{j \neq i} w_{ij}^{1} x_{j}^{(1)}|| \\
+	B&=\sum_{i=1}^{n} ||x_{i,(m,n)}^{(2)} - \sum_{j \neq i} w_{ij}^{2} x_{j}^{(2)}|| \\
+	C&=\sum_{i=1}^{n} ||\sum_{j \neq i} w_{ij}^{(1)}x_{j}^{(1)}-\sum_{j \neq i} w_{ij}^{(2)}x_{j}^{(2)}||
+	\end{align}
+	The next step is determine the value of $\mu$ according to $A$, $B$ and $C$. Commonly, we consider the numerator $|A-B|$ has equal weight to the denominator $C$. During the test experiments, we find $C$ is always much larger than $|A-B|$(about 100$\sim$ 1000 times). Obviously, this situation causes a fact: when we calulate minimizaiton problem $\min \quad \frac{|A-B|}{C}$, the denominator $C$ is the most crucial term. So we should adjust value of $\mu$ to match manitudes order of $|A-B|$ and $C$.
+	
+	This simplified algorithm speed fast. However, its regonization performance is not well enough. Therefore, we use the other simplified algorithm: scan-selection. Firstly we define a submatrix scale. Secondly, from the top left corner to bottom right corner, calculate $A$, $B$, $C$, determine the $\mu$, and the compute $f=\epsilon /\varepsilon$ matrix by matrix. And the final step is comparing these values of $f$, choosing the minimum value, and denote the counterpart submatrix as the best feature.
+	
+	
+	\section{\textbf{FSLR(Feature Selection based on Linear Representation) Algorithm}}
+	Now we do some explaination about FSLR algorithm in this section.
+	
+	\subsection{The frame of FSLR algorithm}
+	To make sure computers can select the characters(or features) based on FSLR automatically, we design an algorithm, which has limited steps. The frame of FSLR algorithm is described by following table:
+	\begin{table}[h]
+		\centering
+		\caption{ALG:1}
+		\begin{tabular}{l|p{5cm}}
+			\hline
+			ALGORITHM \\
+			\hline
+			1.  & Define the submatrix scale($p \times q$) \\
+			2.  & From the top left corner, select a $p \times q$ submatrix \\
+			3.  & Calculate $|A-B|$ and $C$, and determine $\mu$(commonly, $\mu = mean(\frac{|A-B|}{C}$)) \\
+			4.  & Calculate $D=\frac{|A-B|}{C}$ \\
+			5.  & Move the submatrix, if its right have a submatrix in same scale, then move rightward a column; if not, then choose the left-most submatrix in next row. \\
+			6.  & While the submatrix is not the last submatrix, back to execute step 3, step 4 and step 5; while the submatrix is the last submatrix, back to execute step 3 and step 4, and skip to step 7 \\
+			7.  & Compare these $D$, select the submatrix matching the minimal $D$ \\
+			\hline  
+		\end{tabular}
+	\end{table}
+	\\{\color{red}{If there shoud be a program chart?}}
+	\begin{figure*}[!t]
+		\centering
+		\includegraphics[width=6in]{programm.eps}
+		% where an .eps filename suffix will be assumed under latex, 
+		% and a .pdf suffix will be assumed for pdflatex; or what has been declared
+		% via \DeclareGraphicsExtensions.
+		\caption{Simulation results for the network.}
+		\label{fig 4}
+	\end{figure*}
+	
+	In this ALG, step 3 need calculate the linear parameters $w_{ij}$. $w_{ij}$ are solved from the following minimization problems:
+	\begin{equation}
+	arg\min_{w_{ij}^{(k)}} \quad \parallel x_{i}^{(k)}- \sum_{j \neq i} w_{ij}^{(k)}x_{i}^{(k)} \parallel_{2}^{2} + \lambda \parallel w_{i}^{(k)} \parallel_{2}^{2}
+	\end{equation}
+	Clearly, the minimizing function $\parallel x_{i}^{(k)}- \sum_{j \neq i} w_{ij}^{(k)}x_{i}^{(k)} \parallel_{2}^{2} + \lambda \parallel w_{i}^{(k)} \parallel_{2}^{2}$ is differentiable. Hence we can directly solve this equation by derivation. To convenience computing process, we transform the minimization problem:
+	\begin{equation}
+	arg\min_{w_{ij}^{(k)}} \quad {\hat{w}}_{i}^{k} = \parallel x_{i}^{(k)}- D_{i}^{k} w_{i}^{(k)} \parallel_{2}^{2} + \lambda \parallel w_{i}^{(k)} \parallel_{2}^{2}
+	\end{equation}
+	where $D_{i}^{k}$ is the samples with label $k$ expect $x_{i}^{k}$. Let ${\hat{w}}_{i}^{k} = 0$, we can get:
+	\begin{equation}
+	w_{i}^{k}=(D^{T}D+\lambda I)^{-1}x_{i}^{(k)}
+	\end{equation}
+	
+	This is our ALG frame.
+	
+	
+	\subsection{\textbf{The parameters}}
+	There are many parameters in many FR dimention reducing alg. These parameters can adjust the accurcy of algoritm. In our FSLR, we should adjust the paremeters $\lambda$ and $\mu$ to increase the performance. However, how to adjust them?
+	
+	\subsubsection{\textbf{The regularization term coefficient $\lambda$}}
+	In equation (3) and (6), the role of regularization parameter $\lambda$ is twofold[Sparse Representation or Collaborative Representation: Which Helps Face Recognition]. The first aspect is that $\lambda$ makes the least square solution stable, and secondly, it introduces a certaion amount of "sparsity" to the solution $w_{i}^{k}$. The $\lambda$ should be confirmed by this principle. For example, the best value of $\lambda$ -obtained from [Sparse Representation or Collaborative Representation: Which Helps Face Recognition]-is at range of $[10^{-6}, 0.5]$(for AR and YaleB databases).
+	
+	\subsubsection{\textbf{Weight parameter $\mu$}}
+	During our experiment process, we found that the value of $|A+B|$ and $C$ are always not in a same order of magnitudes. As an example, Sheet 2 is the value calculated by submatrix in Figure 3. The $|A+B|$ is much smaller than $C$. That means the term $|A+B|$ hardly influence the value of eq{9}. In other word, the eq[9] is almost only decided by $C$. To solve this trouble, we should introduce the weight parameter $\mu$ . The smaller value of $\mu$ means the higher weight of |A+B|. Suitable $\mu$ is the critical factory of FSLR, we test some different $\mu$ , the features selected by them show in the Figure 4
+	
+	{\color{red}{THE FEATURE SELECTED BY DIFFERENT $\mu$}}
+	
+	
+	\section{\textbf{Experiments and Examples}}
+	We designed some experiments and test some face databases to examine our FSLR performance. We used some known databases, like Yale and YaleB face-image samples sets to evaluate the perfoemance of feature selections and the accuracy of classifier based on these feature selection method. We were running programs in the computer with CPU i5-4210H and 12G RAM. In some experiments, we also use  GPU to speed up the calculation rate.
+	\subsection{\textbf{The experiment of feature selection performance}}
+	As we talking above, human usually recognize face-images just by some parts of them. We evalue FSLR performance is based on if this selection algorithm can choose the most "varity" feature, like {\color{red}{Figure 5}} shows, as an instance,  selecting the sub-grayimage "mouth".
+	
+	In our experiment, we use the Pose05($64\times 64$) and YaleB databases to test the performance of FSLR. In Pose05(64$\times$ 64) database, there are 3332 pictures of 68 people's face, 49 image per individual. We randomly choose two different sets of image, than assign the first 29 pictures in each one set as the training set and the others are test set. We run the FSLR programs on the training set, getting desired performance. {\color{red}{Figure 6}} display some results.
+	
+	
+	
+	For YaleB database, we use the same method to test the performance of our algorithm. Since the YaleB database just have 11 images per individual, we chose the first 6 pictures as training set and the last 5 photoes as the test set. Part of results are in the follow graph:
+	\\
+	
+	The results of this experiment shows that FSLR algorithm can select the ideal feature of faceimage. So, our algorithm could be used to preprocess the high-dimension data for lower-dimension data, improving the calculation speed in classifier.
+	
+	\subsection{\textbf{Performance in LRC classifier}}
+	After reduceing the dimension of samples, we did another experiment of classification, which will show that if the selected feature can represent the whole image in classifier. We test a series of samples,  the result demonstrate our FSLR algorithm choose major characters as we expected.  However, we just choose one single faceimage database to illustrate the progress of this experiment.
+	\subsubsection{\textbf{YaleB 32$\times$32 database}}
+	The Yale B database is the extention of the Yale database. It contains 16128 images of 28 human subjects under 9 poses and 64 illumination conditions. Each individual has about 64 pictures in these database. Rank the iamges as expression is vital in our test, because in our method, the trem $C=\sum_{i=1}^{n} ||\sum_{j \neq i} w_{ij}^{(1)}x_{j}^{(1)}-\sum_{j \neq i} w_{ij}^{(2)}x_{j}^{(2)}|| $ needs $\sum_{j \neq i} w_{ij}^{(1)}x_{j}^{(1)}$ and $\sum_{j \neq i} w_{ij}^{(2)}x_{j}^{(2)}$ need the real subimage of $\sum_{j \neq i} w_{ij}^{(1)}x_{j}^{(1)}$ and $\sum_{j \neq i} w_{ij}^{(2)}x_{j}^{(2)}$ are the same facial expression or configuration. Look at this following figures:
+	
+	\begin{figure}[!t]
+		\centering
+		\includegraphics[width=3in]{YALEB01_04.eps}
+		% where an .eps filename suffix will be assumed under latex, 
+		% and a .pdf suffix will be assumed for pdflatex; or what has been declared
+		% via \DeclareGraphicsExtensions.
+		\caption{Simulation results for the network.}
+		\label{fig 4}
+	\end{figure}
+	As a test experiment, we choose two individuals at random as our basic samples, and $n$ images per person as training samples and the others as test samples. This following figure is show the steps of this experiment:
+	\\
+	\begin{figure*}[!t]
+		\centering
+		\includegraphics[width=5in]{prograssiom.eps}
+		% where an .eps filename suffix will be assumed under latex, 
+		% and a .pdf suffix will be assumed for pdflatex; or what has been declared
+		% via \DeclareGraphicsExtensions.
+		\caption{Simulation results for the network.}
+		\label{fig 4}
+	\end{figure*}
+	\\
+	Now we using LRC(linear representation classifier) to recognize test images. Our experimental result(comparing with the PCA+LRC) is shown in \ref{tab:2}:
+	
+	\begin{table*}[!h]  	
+		\centering  
+		\fontsize{6.5}{8}\selectfont  
+		\caption{YaleB: FSLR}  
+		\label{tab:2}  
+		\begin{tabular}{|c|c|c|c|c|c|c|c|c|c|}  
+			\hline  
+			TEST&
+			\multicolumn{3}{c|}{10Train}&\multicolumn{3}{c|}{15Train}&\multicolumn{3}{c|}{20Train}\cr\cline{2-10}  
+			&Train Individual&Feature&Precision Rate&Train Individual&Feature&Precision Rate&Train Individual&Feature&Precision Rate  \cr
+			\hline   
+			\hline
+			1&[31,34]&[13,12]&0.88  &[25,28]&[1,16]&0.73  &[5,2]&[1,16]&0.82\cr\hline  
+			2&[37,18]&[13,2]&0.86  &[20,31]&[7,7]&0.85   &[6,32]&[6,16]&0.89\cr\hline  
+			3&[37,2]&[13,7]&0.71  &[33,8]&[10,9]&0.76   &[32,20]&[14,13,]&0.84\cr\hline  
+			4&[34,36]&[8,16]&0.81  &[10,23]&[5,6]&0.92   &[37,6]&[6,5]&0.89\cr\hline  
+			5&[8,10]&[2,3]&0.68  &[37,21]&[13,2]&0.78   &[34,19]&[5,16]&0.89\cr\hline  
+			6&[3,2]&[15,11]&0.74  &[26,6]&[7,8]&0.77   &[10,22]&[9,6]&0.83\cr\hline
+			7&[7,23]&[7,16]&0.80  &[35,23]&[7,12]&0.97   &[32,7]&[12,10]&0.82\cr\hline
+			8&[21,37]&[12,4]&0.71  &[26,6]&[15,6]&0.72    &[31,9]&[7,6]&0.77\cr\hline
+			9&[10,30]&[17,9]&0.70  &[4,5]&[10,7]&0.95	 &[38,9]&[1,2]&0.78\cr\hline	
+			10&[33,24]&[3,12]&0.72  &[8,19]&[14,8]&0.90   &[19,23]&[11,2]&0.85\cr\hline
+			\hline  
+		\end{tabular}  
+	\end{table*}
+	
+    \begin{figure*}[!t]
+		\centering
+		\subfloat[FACE I]{\includegraphics[width=3in]{PIE.eps}\label{a}}
+		\hfil	
+		
+		\caption{(a), (b) are two individuals in AR database; (c), (d) are feature we can recognize these two person, it include left eye of each person; (e),(f) are other feature we can recognize these two person, it include beard and underjaw}
+		\label{fig 6}
+    \end{figure*}
+	
+	As comparation, using the PCA dimention reducing method, we do another experiment. Here is its result:
+	\begin{table}[h]
+		\centering
+		\caption{Yale:PCA+SVM}
+		\begin{tabular}{c|c}
+			\hline
+			Training Individual  & Recognization Rate\\
+			\hline
+			(1,2)  & \qquad \\
+			(2,3)  & \qquad \\
+			(1,4)  & \qquad \\
+			(9,12)  & \qquad \\
+			(5,8)  & \qquad \\
+			(11,14)  & \qquad \\
+			(6,14)  & \qquad \\
+			(6,9)  & \qquad \\
+			(3,5)  & \qquad \\
+			(7,15)& \qquad \\
+			\hline
+			Means  & \qquad \\
+			\hline
+		\end{tabular}
+	\end{table}
+	
+	We could see our algorithm is more efficiently in some aspects. It will improve the accuracy of recognization.
+	
+	
+	\subsubsection{\textbf{The PIE 32 $\times$ 32 database}}
+	PIE is a database contains 41,368 images of 68 people, each person under 13 different poses, 43 different illumination conditions, and with 4 different expressions. There 170 images per individual.
+	We designed a similar experiment with above Yale database test, and got the result:
+	\begin{table}[h]
+		\centering
+		\caption{PIE:FSLR+SVM}
+		\begin{tabular}{l|l c}
+			\hline
+			Training Individual & $\mu$ & Recognization Rate\\
+			\hline
+			(1,2) & 0.01 & 0.9\\
+			(2,3) & 0.01 & 1\\
+			(1,4) & 0.02 & 0.9\\
+			(9,12) & 0.02 & 0.9\\
+			(5,8) & 0.02 & 0.9\\
+			(11,14) & 0.01 &0.9\\
+			(6,14) & 0.01 & 0.7\\
+			(6,9) & 0.01 & 0.8\\
+			(3,5) & 0.02 & 0.9\\
+			(7,15) & 0.03 & 0.9\\
+			\hline
+			Means & \qquad & 0.88\\
+			\hline
+		\end{tabular}
+	\end{table}
+	
+	For this database, we also see that the performance of classification based on FSLR is better that PCA.
+	
+	\subsection{\textbf{Other tests}}
+	We also test other database. However, all of these 
+	
+	
+	
+	
+	% An example of a floating figure using the graphicx package.
+	% Note that \label must occur AFTER (or within) \caption.
+	% For figures, \caption should occur after the \includegraphics.
+	% Note that IEEEtran v1.7 and later has special internal code that
+	% is designed to preserve the operation of \label within \caption
+	% even when the captionsoff option is in effect. However, because
+	% of issues like this, it may be the safest practice to put all your
+	% \label just after \caption rather than within \caption{}.
+	%
+	% Reminder: the "draftcls" or "draftclsnofoot", not "draft", class
+	% option should be used if it is desired that the figures are to be
+	% displayed while in draft mode.
+	%
+	%\begin{figure}[!t]
+	%\centering
+	%\includegraphics[width=2.5in]{myfigure}
+	% where an .eps filename suffix will be assumed under latex, 
+	% and a .pdf suffix will be assumed for pdflatex; or what has been declared
+	% via \DeclareGraphicsExtensions.
+	%\caption{Simulation results for the network.}
+	%\label{fig_sim}
+	%\end{figure}
+	
+	% Note that the IEEE typically puts floats only at the top, even when this
+	% results in a large percentage of a column being occupied by floats.
+	
+	
+	% An example of a double column floating figure using two subfigures.
+	% (The subfig.sty package must be loaded for this to work.)
+	% The subfigure \label commands are set within each subfloat command,
+	% and the \label for the overall figure must come after \caption.
+	% \hfil is used as a separator to get equal spacing.
+	% Watch out that the combined width of all the subfigures on a 
+	% line do not exceed the text width or a line break will occur.
+	%
+	%\begin{figure*}[!t]
+	%\centering
+	%\subfloat[Case I]{\includegraphics[width=2.5in]{box}%
+	%\label{fig_first_case}}
+	%\hfil
+	%\subfloat[Case II]{\includegraphics[width=2.5in]{box}%
+	%\label{fig_second_case}}
+	%\caption{Simulation results for the network.}
+	%\label{fig_sim}
+	%\end{figure*}
+	%
+	% Note that often IEEE papers with subfigures do not employ subfigure
+	% captions (using the optional argument to \subfloat[]), but instead will
+	% reference/describe all of them (a), (b), etc., within the main caption.
+	% Be aware that for subfig.sty to generate the (a), (b), etc., subfigure
+	% labels, the optional argument to \subfloat must be present. If a
+	% subcaption is not desired, just leave its contents blank,
+	% e.g., \subfloat[].
+	
+	
+	% An example of a floating table. Note that, for IEEE style tables, the
+	% \caption command should come BEFORE the table and, given that table
+	% captions serve much like titles, are usually capitalized except for words
+	% such as a, an, and, as, at, but, by, for, in, nor, of, on, or, the, to
+	% and up, which are usually not capitalized unless they are the first or
+	% last word of the caption. Table text will default to \footnotesize as
+	% the IEEE normally uses this smaller font for tables.
+	% The \label must come after \caption as always.
+	%
+	%\begin{table}[!t]
+	%% increase table row spacing, adjust to taste
+	%\renewcommand{\arraystretch}{1.3}
+	% if using array.sty, it might be a good idea to tweak the value of
+	% \extrarowheight as needed to properly center the text within the cells
+	%\caption{An Example of a Table}
+	%\label{table_example}
+	%\centering
+	%% Some packages, such as MDW tools, offer better commands for making tables
+	%% than the plain LaTeX2e tabular which is used here.
+	%\begin{tabular}{|c||c|}
+	%\hline
+	%One & Two\\
+	%\hline
+	%Three & Four\\
+	%\hline
+	%\end{tabular}
+	%\end{table}
+	
+	
+	% Note that the IEEE does not put floats in the very first column
+	% - or typically anywhere on the first page for that matter. Also,
+	% in-text middle ("here") positioning is typically not used, but it
+	% is allowed and encouraged for Computer Society conferences (but
+	% not Computer Society journals). Most IEEE journals/conferences use
+	% top floats exclusively. 
+	% Note that, LaTeX2e, unlike IEEE journals/conferences, places
+	% footnotes above bottom floats. This can be corrected via the
+	% \fnbelowfloat command of the stfloats package.
+	
+	
+	
+	
+	\section{Conclusion}
+	The conclusion goes here.
+	
+	
+	
+	
+	% conference papers do not normally have an appendix
+	
+	
+	% use section* for acknowledgment
+	\section*{Acknowledgment}
+	
+	
+	The authors would like to thank...
+	
+	
+	
+	
+	
+	% trigger a \newpage just before the given reference
+	% number - used to balance the columns on the last page
+	% adjust value as needed - may need to be readjusted if
+	% the document is modified later
+	%\IEEEtriggeratref{8}
+	% The "triggered" command can be changed if desired:
+	%\IEEEtriggercmd{\enlargethispage{-5in}}
+	
+	% references section
+	
+	% can use a bibliography generated by BibTeX as a .bbl file
+	% BibTeX documentation can be easily obtained at:
+	% http://mirror.ctan.org/biblio/bibtex/contrib/doc/
+	% The IEEEtran BibTeX style support page is at:
+	% http://www.michaelshell.org/tex/ieeetran/bibtex/
+	%\bibliographystyle{IEEEtran}
+	% argument is your BibTeX string definitions and bibliography database(s)
+	%\bibliography{IEEEabrv,../bib/paper}
+	%
+	% <OR> manually copy in the resultant .bbl file
+	% set second argument of \begin to the number of references
+	% (used to reserve space for the reference number labels box)
+	\begin{thebibliography}{1}
+		
+		\bibitem{IEEEhowto:kopka}
+		H.~Kopka and P.~W. Daly, \emph{A Guide to \LaTeX}, 3rd~ed.\hskip 1em plus
+		0.5em minus 0.4em\relax Harlow, England: Addison-Wesley, 1999.
+		
+	\end{thebibliography}
+	
+	
+	
+	
+	% that's all folks
+\end{document}
